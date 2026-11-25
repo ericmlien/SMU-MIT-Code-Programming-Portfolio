@@ -22,7 +22,7 @@ public class SeaStarProjectile : DamagingProjectile
 
     private void StartTurnBack() {
         SwitchMovement(movementSOs[1], actor.gameObject.transform.position);
-        Debug.Log($"Starting turn back! -SeaStarProjectile");
+        // Debug.Log($"Starting turn back! -SeaStarProjectile");
         isComingBack = true;
         canHitOwner = true;
         StartCoroutine(ReturnDelay());
