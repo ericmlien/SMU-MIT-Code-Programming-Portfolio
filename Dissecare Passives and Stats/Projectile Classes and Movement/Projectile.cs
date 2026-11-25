@@ -9,19 +9,24 @@ public abstract class Projectile : MonoBehaviour {
     protected Rigidbody body;
     public bool canHitOwner = false;
     public bool canHitSame = false;
+    protected Transform shootPoint;
 
     protected AbilityType abilityType = AbilityType.ranged;
     public List<ProjectileMovementSO> movementSOs = new List<ProjectileMovementSO>();
     protected ProjectileMovementSO currentMovement = null;
     private IObjectPool<GameObject> pool;
     private CountdownTimer despawnTimer;
+    public bool canDespawn = true;
     protected List<AbilityScaling> scalings = new List<AbilityScaling>();
     protected Actor actor;
     private bool released;
 
     public virtual void Awake() {
-        despawnTimer = new CountdownTimer(0f);
-        despawnTimer.OnTimerStop += ReleaseSelf;
+
+        if (canDespawn) {
+            despawnTimer = new CountdownTimer(0f);
+            despawnTimer.OnTimerStop += ReleaseSelf;
+        }
 
         foreach (GameObject model in models) {
             model.SetActive(false);
@@ -43,16 +48,17 @@ public abstract class Projectile : MonoBehaviour {
         released = true;
     }
 
-    public virtual void Init(IObjectPool<GameObject> pool, Actor actor, AbilityType abilityType, List<AbilityScaling> scalings) {
+    public virtual void Init(IObjectPool<GameObject> pool, Actor actor, Transform shootPoint, AbilityType abilityType, List<AbilityScaling> scalings) {
         this.pool = pool;
         this.actor = actor;
         this.abilityType = abilityType;
         this.scalings = scalings;
+        this.shootPoint = shootPoint;
     }
 
     public virtual void OnSpawn(float despawnTime, Vector3 target, Transform targetTransform = null) {
         despawnTimer.Reset(despawnTime);
-        // Debug.Log($"Our target: {target} -Projectile");
+         Debug.Log($"Our target: {target} -Projectile");
         SwitchMovement(movementSOs[0], target, targetTransform);
         released = false;
         //// Debug.Log($"My actor inside Init: {actor}");
@@ -150,4 +156,6 @@ public abstract class Projectile : MonoBehaviour {
         currentModel.SetActive(false);
         col.enabled = false;
     }
+
+
 }

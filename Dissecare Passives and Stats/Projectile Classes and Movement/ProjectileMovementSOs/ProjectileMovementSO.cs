@@ -12,6 +12,8 @@ public abstract class ProjectileMovementSO : ScriptableObject {
     // For projectile movement that wants to react to the movement of a target transform.
     protected Transform targetTransform = null;
 
+    protected Vector3 originPoint;
+
     public Action OnTargetReached = delegate { };
    
     public virtual void Init(Transform projectileTransform, Rigidbody projectileBody, Vector3 target, Transform transform = null) {
@@ -20,6 +22,7 @@ public abstract class ProjectileMovementSO : ScriptableObject {
         if (transform != null) targetTransform = transform;
         
         InitProjectileBody(projectileBody);
+        SetOriginPoint(projectileTransform);
     }
 
     public virtual void InitProjectileBody(Rigidbody projectileBody) {
@@ -30,9 +33,9 @@ public abstract class ProjectileMovementSO : ScriptableObject {
     public virtual void ReachMaxSpeed(Transform projectileTransform, Rigidbody projectileBody) { }
     public virtual void UpdateForce(Transform projectileTransform, Rigidbody projectileBody, float deltaTime) { }
 
-    public bool CheckTargetReached(Transform projectileTransform) {
+    public virtual bool CheckTargetReached(Transform projectileTransform) {
         Vector3 targetPos = targetTransform != null ? targetTransform.position : GetTarget();
-        // Debug.Log((projectileTransform.position - targetPos).magnitude);
+        Debug.Log($"Distance to target: {(projectileTransform.position - targetPos).magnitude}");
         if ((projectileTransform.position - targetPos).magnitude < 1f) {
             OnTargetReached.Invoke();
             return true;
@@ -45,6 +48,14 @@ public abstract class ProjectileMovementSO : ScriptableObject {
             return targetPoint;
         }
         return targetTransform.position;
+    }
+
+    public void SetOriginPoint(Transform projectileTransform) {
+        originPoint = projectileTransform.position;
+    }
+
+    public Vector3 GetOriginPoint() {
+        return originPoint;
     }
 
 }
