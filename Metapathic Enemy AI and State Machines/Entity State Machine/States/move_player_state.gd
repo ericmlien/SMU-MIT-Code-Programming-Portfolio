@@ -130,18 +130,6 @@ func unsubscribe_inputs() -> void:
 func get_move_speed() -> float:
 	return target_move_speed
 
-func on_jump() -> void:
-	state_machine.change_state("Jump")
-	return
-
-func on_dash() -> void:
-	state_machine.change_state("Dash")
-	return
-
-func on_slide() -> void:
-	state_machine.change_state("Slide")
-	return
-
 func on_move(move_dir: Vector3) -> void:
 	target_move_speed = data.move_speed
 	
