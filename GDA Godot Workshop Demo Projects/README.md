@@ -1,8 +1,10 @@
 GDA Workshop Demo Projects:
-    As a programming officer at GDA, I have the privilege of designing workshops for members of the programming department. Most of the workshops are given during our department meetings during fall quarter, after which we transition to devoting meeting times to work on GDA’s yearly game. As GDA is still pretty new to Godot and a lot of new members come to the first programming meeting without any experience using Godot or game engines in general. Thus, of the workshops I’ve been working on are designed to provide an introduction to game programming, using Godot as a game engine, and best practices and design patterns. Based on member feedback about the workshops from last year, I pushed to make hands-on activities a larger part of our workshops, as opposed to just a lecture. These demo projects are a product of this experiment!
+    As a programming officer at GDA, I have the privilege of designing workshops for members of the programming department. Most of the workshops are given during our department meetings during fall quarter, after which we transition to devoting meeting times to work on GDA’s yearly game. As GDA is still pretty new to Godot and a lot of new members come to the first programming meeting without any experience using Godot or game engines in general. Thus, of the workshops I’ve been working on are designed to provide an introduction to game programming, using Godot as a game engine, and best practices and design patterns. Based on member feedback about the workshops from last year, I pushed to make hands-on activities a larger part of our workshops, as opposed to just a lecture. These demo projects are a product of this experiment! Made during Fall quarter of 2026, late Sept 2026 - late Nov 2026.
+
 
 Intent:
     After talking about each topic, we’d introduce an activity, where us officers would give a live demo while members follow along. We felt that this further engaged members in the practice of using Godot, letting members learn by gaining familiarity instead of purely using their memory. So far, I’ve been super impressed with how fast our members have been able to learn and I’m hoping future programming officers continue to refine these demo projects after I leave!
+
 
 What’s Inside:
     Godot Workshop 1 - Intro to Godot and GDScript:

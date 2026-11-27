@@ -1,8 +1,10 @@
 Metapathic:
     Metapathic is a fast-paced 3D hack-n-slash platformer made in Godot that I helped on in the Spring of 2026, specifically from April 2026 - early June 2026.
 
+
 Intent:
     This capstone project was started in Winter of 2026. When I joined this project, a lot of the code made during Winter quarter was, understandably, given the fast-paced capstone class requirements, not written with scalability as the main priority. The group decided that it was worth it to rewrite the entity state machine code from scratch to be modular and easily scalable, which was right up my alley! I spent my first weeks in development planning out the architecture and writing the base classes for entities and their state machines, while also writing the code and physics for some basic entity states. One of my groupmates wanted to take the reins on writing the code for the rest of the states, which allowed me to devote the rest of the quarter to designing and implementing the AI behaviors for NPCs, building a behavior tree system from the bottom-up!
+
 
 What’s Inside:
     Entities:
@@ -58,6 +60,7 @@ What’s Inside:
                 Leaf nodes that just mark their owner as “busy” or “not_busy”. Often used when the NPC behavior is in an idling state, allowing the NPC to turn itself off when it’s off-screen.
             Extra Logic:
                 Leaf nodes that allow for different structures of logic to keep tree structure simple. For example, “behavior_tree_lock_node.gd” is a lock that returns “success” or “failure” depending on if it’s locked or not. “Behavior_tree_open_lock_node.gd” and “behavior_tree_close_node.gd” take in a lock_node as an exported variable and can open/close a lock node as an action in the tree. See SpearEnemyBehaviorTree.jpg for an example on how lock nodes were used!
+
 
 User Instructions and Examples:
     Making a BehaviorTree for an NPC:

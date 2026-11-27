@@ -1,10 +1,10 @@
 Dissecare:
-    Dissecare is a 3D roguelite fps for which I designed and implemented the passives, projectile, and stats systems! The demo involves the player stealing appendages and other body-parts from enemies to steal their abilities and passives. At the end of a run, the player’s body might look completely different from when they started their run and how they finished the run before.
+    Dissecare is a 3D roguelike fps for which I designed and implemented the passives, projectile, and stats systems! The demo involves the player stealing appendages and other body-parts from enemies to steal their abilities and passives. At the end of a run, the player’s body might look completely different from when they started their run and how they finished the run before.
     This project was made as part of UCSC’s senior capstone in Winter 2026 using Unity Engine. I worked on this project from Jan 2026 - late March 2026.
 
 
 Intent:
-    Our major design goal was encouraging the player to experiment with their individual playstyle and build-making (more like body-building!). As a roguelite, we knew that a lot of the build-making and individual expression we were aiming for demanded a lot of content and higher scope. With this in mind, I designed the demo’s passives, projectile, and stats systems with the goal of accommodating varying kinds of passives, abilities, and freedom.
+    Our major design goal was encouraging the player to experiment with their individual playstyle and build-making (more like body-building!). As a roguelike, we knew that a lot of the build-making and individual expression we were aiming for demanded a lot of content and higher scope. With this in mind, I designed the demo’s passives, projectile, and stats systems with the goal of accommodating varying kinds of passives, abilities, and freedom.
 
 
 What’s inside:
